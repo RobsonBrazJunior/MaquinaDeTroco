@@ -39,7 +39,7 @@ namespace MaquinaDeTroco.Infra.Data.Repository.Repositories
 			return _context.Set<T>().ToList();
 		}
 
-		public T GetById(int id)
+		public T GetById(Guid id)
 		{
 			return _context.Set<T>().Find(id);
 		}
