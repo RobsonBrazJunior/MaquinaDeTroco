@@ -19,4 +19,8 @@
     <ProjectReference Include="..\MaquinaDeTroco.Domain\MaquinaDeTroco.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repository\Repositories\" />
+  </ItemGroup>
+
 </Project>
