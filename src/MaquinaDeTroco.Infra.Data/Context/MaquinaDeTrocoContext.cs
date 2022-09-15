@@ -8,5 +8,10 @@ namespace MaquinaDeTroco.Infra.Data.Context
 		public DbSet<User> Users { get; set; }
 
 		public MaquinaDeTrocoContext(DbContextOptions<MaquinaDeTrocoContext> options) : base(options) { }
+
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		{
+			modelBuilder.ApplyConfigurationsFromAssembly(typeof(MaquinaDeTrocoContext).Assembly);
+		}
 	}
 }
