@@ -1,4 +1,5 @@
-﻿using MaquinaDeTroco.Services.Interfaces;
+﻿using MaquinaDeTroco.Domain.Models;
+using MaquinaDeTroco.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -27,6 +28,17 @@ namespace MaquinaDeTroco.Application.Api.Controllers
 				return NotFound();
 
 			return Ok(result);
+		}
+
+		[HttpPost("Add")]
+		public IActionResult Add([FromBody] User user)
+		{
+			if (!ModelState.IsValid)
+				return BadRequest(user);
+
+			_userService.Add(user);
+
+			return Ok();
 		}
 	}
 }
